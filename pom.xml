@@ -13,6 +13,7 @@
         <module>nacos-discovery-consumer</module>
         <module>nacos-discovery-consumer-feign</module>
         <module>nacos-discovery-gateway</module>
+        <module>nacos-config-client</module>
     </modules>
 
     <properties>
