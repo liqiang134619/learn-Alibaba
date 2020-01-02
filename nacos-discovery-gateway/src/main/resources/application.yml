@@ -1,0 +1,24 @@
+
+server:
+  port: 11010
+
+
+spring:
+  application:
+    name: nacos-gateway
+
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+
+    gateway:
+      routes:
+        - id: nacos-provider
+          uri: lb://nacos-provider
+          predicates:
+            - Path=/provider/**
+          filters:
+            - StripPrefix=1
+
+
