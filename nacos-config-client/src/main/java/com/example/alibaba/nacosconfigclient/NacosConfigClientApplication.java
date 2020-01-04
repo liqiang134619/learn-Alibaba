@@ -9,9 +9,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class NacosConfigClientApplication {
 
 
-
     public static void main(String[] args) {
-        ConfigurableApplicationContext applicationContext = SpringApplication.run(NacosConfigClientApplication.class, args);
+        SpringApplication.run(NacosConfigClientApplication.class, args);
 ///        String userName = applicationContext.getEnvironment().getProperty("user.name");
 //        String userAge = applicationContext.getEnvironment().getProperty("user.age");
 //        System.out.println("user name :" +userName+"; age: "+userAge);

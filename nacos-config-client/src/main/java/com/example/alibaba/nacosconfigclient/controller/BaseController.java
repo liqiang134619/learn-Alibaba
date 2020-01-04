@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class BaseController {
 
 
-    @Value("${test}")
+    @Value("${test:test为空}")
     public String str;
 
     @GetMapping("/hello")

@@ -1,6 +1,5 @@
-
 server:
-  port: 11010
+  port: 11111
 
 
 spring:
@@ -12,13 +11,39 @@ spring:
       discovery:
         server-addr: localhost:8848
 
+
     gateway:
+      httpclient:
+        connect-timeout: 1000
+        response-timeout: 5s
+      loadbalancer:
+        use404: true
       routes:
         - id: nacos-provider
           uri: lb://nacos-provider
           predicates:
             - Path=/provider/**
+#          过滤器添加参数
           filters:
+#            - AddRequestParameter=red, blue
             - StripPrefix=1
 
+
+#    gateway:
+#      routes:
+#        - id: after-route
+#          uri: https://example.org
+##          在此时间之后的所有请求都由网关代理转发
+#          predicates:
+#            - After=2017-01-20T17:42:47.789-07:00[America/Denver]
+
+#    gateway:
+#      routes:
+#        - id: nacos-provider
+#          uri: lb://nacos-provider
+#          predicates:
+#            - Path=/provider/**
+#          filters:
+#            - StripPrefix=1
+#
 

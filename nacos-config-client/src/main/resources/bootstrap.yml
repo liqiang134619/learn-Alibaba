@@ -4,7 +4,7 @@ spring:
       config:
         server-addr: 127.0.0.1:8848
   application:
-    name: nacos-config-client
+    name: nacos-config
 
 server:
   port: 8086
