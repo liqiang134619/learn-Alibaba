@@ -7,9 +7,9 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username:
-    password:
-    url:
+    username: tmc
+    password: tmc
+    url: jdbc:mysql://61.155.157.42:13306/annual_meeting?useUnicode=true&useSSL=false&characterEncoding=utf8
     hikari:
       minimum-idle: 5
       idle-timeout: 600000

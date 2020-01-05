@@ -1,5 +1,6 @@
 package com.example.alibaba.cloudexampleouth2;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -12,7 +13,8 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.E
  */
 @SpringBootApplication
 @EnableAuthorizationServer
-@EnableResourceServer
+//@EnableResourceServer
+@MapperScan("com.example.alibaba.cloudexampleouth2.mapper")
 public class CloudExampleOuth2Application {
 
     public static void main(String[] args) {
