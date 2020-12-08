@@ -16,6 +16,7 @@
         <module>nacos-config-client</module>
         <module>sentinel-core-example</module>
         <module>cloud-example-outh2</module>
+        <module>cloud-example-oauth2-resource</module>
     </modules>
 
     <properties>

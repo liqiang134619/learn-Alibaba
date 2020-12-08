@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class BaseController {
 
 
+
     @Value("${test:test为空}")
     public String str;
 

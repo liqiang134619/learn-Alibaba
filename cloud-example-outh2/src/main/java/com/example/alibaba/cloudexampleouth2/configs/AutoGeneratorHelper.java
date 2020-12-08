@@ -24,7 +24,6 @@ public class AutoGeneratorHelper {
 
         // 全局配置
         GlobalConfig globalConfig = new GlobalConfig();
-        String property = System.getProperty("user.dir");
         globalConfig.setOutputDir(System.getProperty("user.dir") + rb.getString("moduleName") + "/src/main/java");
         System.out.println(System.getProperty("user.dir") + rb.getString("moduleName") + "/src/main/java");
         globalConfig.setAuthor(rb.getString("author"));
@@ -44,6 +43,7 @@ public class AutoGeneratorHelper {
         strategy.setEntityLombokModel(true);
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setInclude(rb.getString("tableName").split(","));
+        strategy.setEntityTableFieldAnnotationEnable(true);
         strategy.setRestControllerStyle(false);
 
 

@@ -1,5 +1,8 @@
 package com.example.alibaba.nacosdiscoveryprovider.controller;
 
+import com.example.alibaba.nacosdiscoveryprovider.controller.service.BaseService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +16,11 @@ import java.util.Map;
  * @date 2020/1/1
  */
 @RestController
+@RequiredArgsConstructor(onConstructor_ = @Autowired)
 public class BaseController {
+
+
+    private BaseService baseService;
 
 
     @Value("${server.port}")
@@ -22,7 +29,8 @@ public class BaseController {
 
     @GetMapping("/hello")
     public String hello() {
-        return "success"+ port;
+
+        return baseService.helo()+ port;
     }
 
     @GetMapping("/param")
